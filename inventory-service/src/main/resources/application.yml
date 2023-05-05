@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    username: postgres
+    password: '12345'
+    url: jdbc:postgresql://localhost:5432/inventorydb-dev
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
