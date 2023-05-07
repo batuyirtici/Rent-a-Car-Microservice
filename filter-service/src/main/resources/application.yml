@@ -1,10 +1,10 @@
 spring:
   application:
-    name: INVENTORY-SERVICE
+    name: FILTER-SERVICE
   datasource:
     username: postgres
     password: '12345'
-    url: jdbc:postgresql://localhost:5432/inventorydb-dev
+    url: jdbc:postgresql://localhost:5432/filterdb-dev
   jpa:
     properties:
       hibernate:
@@ -18,8 +18,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
   instance:
-    metadata-map:
-      serviceId: inventory-service
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
     prefer-ip-address: true
 server:
