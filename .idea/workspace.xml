@@ -4,30 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="filter-service, api-gateway">
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/BrandDeletedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/CarCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/CarDeletedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/kafka/consumer/InventoryConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/producer/InventoryProducer.java" afterDir="false" />
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added kafka">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/abstracts/FilterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/abstracts/FilterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetAllFiltersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetAllFiltersResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetFilterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetFilterResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/repository/FilterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/repository/FilterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/BrandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/BrandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,10 +119,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FilterServiceApplication" />
         <item itemvalue="Application.InventoryServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
-        <item itemvalue="Application.FilterServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -170,13 +149,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683475437355</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added kafka">
+      <created>1683818817664</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683818817664</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="created a project" />
     <MESSAGE value="filter-service, api-gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter-service, api-gateway" />
+    <MESSAGE value="added kafka" />
+    <option name="LAST_COMMIT_MESSAGE" value="added kafka" />
   </component>
 </project>

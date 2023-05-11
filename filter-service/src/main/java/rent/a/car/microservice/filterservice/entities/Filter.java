@@ -19,7 +19,7 @@ public class Filter {
     private String id;
 
     private UUID brandId;
-    private UUID carID;
+    private UUID carId;
     private UUID modelId;
     private String brandName;
     private String modelName;
