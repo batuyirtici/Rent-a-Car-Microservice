@@ -12,6 +12,7 @@ public interface FilterService {
     GetFilterResponse getById(UUID id);
     void add(Filter filter);
     void delete(UUID id);
+    void deleteByCarId(UUID carId);
     void deleteAllByBrandId(UUID brandId); // Bulk Delete
     void deleteAllByModelId(UUID modelId); // Bulk Delete
 }

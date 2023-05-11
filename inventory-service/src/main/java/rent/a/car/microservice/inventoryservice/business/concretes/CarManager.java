@@ -2,6 +2,8 @@ package rent.a.car.microservice.inventoryservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rent.a.car.microservice.commonpackage.events.CarCreatedEvent;
+import rent.a.car.microservice.commonpackage.events.CarDeletedEvent;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
 import rent.a.car.microservice.inventoryservice.business.abstracts.CarService;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.CreateCarRequest;
@@ -10,6 +12,7 @@ import rent.a.car.microservice.inventoryservice.business.dto.responses.creates.C
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetAllCarsResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.updates.UpdateCarResponse;
+import rent.a.car.microservice.inventoryservice.business.kafka.producer.InventoryProducer;
 import rent.a.car.microservice.inventoryservice.business.rules.CarBusinessRules;
 import rent.a.car.microservice.inventoryservice.entities.Car;
 import rent.a.car.microservice.inventoryservice.entities.enums.State;
@@ -24,6 +27,7 @@ public class CarManager implements CarService {
     private final CarBusinessRules rules;
     private final CarRepository repository;
     private final ModelMapperService mapper;
+    private final InventoryProducer producer;
 
     @Override
     public List<GetAllCarsResponse> getAll() {
@@ -31,7 +35,7 @@ public class CarManager implements CarService {
 
         var response = cars
                 .stream()
-                .map(car -> mapper.forResponse().map(cars, GetAllCarsResponse.class))
+                .map(car -> mapper.forResponse().map(car, GetAllCarsResponse.class))
                 .toList();
 
         return response;
@@ -50,11 +54,13 @@ public class CarManager implements CarService {
     public CreateCarResponse add(CreateCarRequest request) {
         var car = mapper.forRequest().map(request, Car.class);
 
-        car.setId(null);
+        car.setId(UUID.randomUUID());
         car.setState(State.Available);
-        repository.save(car);
 
-        var response = mapper.forResponse().map(car, CreateCarResponse.class);
+        var createdCar = repository.save(car);
+        sendKafkaCarCreatedEvent(createdCar);
+
+        var response = mapper.forResponse().map(createdCar, CreateCarResponse.class);
 
         return response;
     }
@@ -77,5 +83,17 @@ public class CarManager implements CarService {
         rules.checkIfCarExists(id);
 
         repository.deleteById(id);
+
+        sendKafkaCarDeletedEvent(id);
     }
+
+    //**********************************
+
+    private void sendKafkaCarCreatedEvent(Car createdCar){
+        var event = mapper.forResponse().map(createdCar, CarCreatedEvent.class);
+        producer.sendMessage(event);
+    }
+
+    private void sendKafkaCarDeletedEvent(UUID id)
+    { producer.sendMessage(new CarDeletedEvent(id)); }
 }

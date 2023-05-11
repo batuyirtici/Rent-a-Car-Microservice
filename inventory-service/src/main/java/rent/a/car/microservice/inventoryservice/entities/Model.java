@@ -22,7 +22,7 @@ public class Model {
 
     private String name;
 
-    @OneToMany(mappedBy = "model")
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
     private List<Car> cars;
 
     @ManyToOne

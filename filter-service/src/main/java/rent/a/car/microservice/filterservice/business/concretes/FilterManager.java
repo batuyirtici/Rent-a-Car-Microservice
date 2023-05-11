@@ -40,22 +40,17 @@ public class FilterManager implements FilterService {
     }
 
     @Override
-    public void add(Filter filter) {
-
-    }
+    public void add(Filter filter) { repository.save(filter); }
 
     @Override
-    public void delete(UUID id) {
-
-    }
+    public void delete(UUID id) { repository.deleteById(id); }
 
     @Override
-    public void deleteAllByBrandId(UUID brandId) {
-
-    }
+    public void deleteByCarId(UUID carId) { repository.deleteByCarId(carId); }
 
     @Override
-    public void deleteAllByModelId(UUID modelId) {
+    public void deleteAllByBrandId(UUID brandId) { repository.deleteAllByBrandId(brandId); }
 
-    }
+    @Override
+    public void deleteAllByModelId(UUID modelId) {}
 }

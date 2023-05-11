@@ -4,49 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="created a project">
-      <change afterPath="$PROJECT_DIR$/api-gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/rent/a/car/microservice/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/test/java/rent/a/car/microservice/apigateway/ApiGatewayApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/java/rent/a/car/microservice/discoveryserver/DiscoveryServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/test/java/rent/a/car/microservice/discoveryserver/DiscoveryServerApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/FilterServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/api/controllers/FiltersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/abstracts/FilterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetAllFiltersResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetFilterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/configuration/ModelMapperConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/repository/FilterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/test/java/rent/a/car/microservice/filterservice/FilterServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="filter-service, api-gateway">
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/BrandDeletedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/CarCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/CarDeletedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/kafka/consumer/InventoryConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/producer/InventoryProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-package/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/InventoryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/abstracts/FilterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/abstracts/FilterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetAllFiltersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetAllFiltersResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetFilterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetFilterResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/repository/FilterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/repository/FilterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/BrandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/BrandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/entities/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,15 +64,15 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/batuy/Desktop/turkcell-java-bootcamp/rent-a-car-microservice/api-gateway",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/batuy/Desktop/turkcell-java-bootcamp/rent-a-car-microservice&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="rent.a.car.microservice.commonpackage.utils.annotations" />
@@ -160,10 +140,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FilterServiceApplication" />
         <item itemvalue="Application.InventoryServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
+        <item itemvalue="Application.FilterServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -183,12 +163,20 @@
       <option name="project" value="LOCAL" />
       <updated>1683316988645</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="filter-service, api-gateway">
+      <created>1683475437355</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683475437355</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="created a project" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a project" />
+    <MESSAGE value="filter-service, api-gateway" />
+    <option name="LAST_COMMIT_MESSAGE" value="filter-service, api-gateway" />
   </component>
 </project>
