@@ -2,8 +2,8 @@ package rent.a.car.microservice.inventoryservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import rent.a.car.microservice.commonpackage.events.CarCreatedEvent;
-import rent.a.car.microservice.commonpackage.events.CarDeletedEvent;
+import rent.a.car.microservice.commonpackage.events.inventory.CarCreatedEvent;
+import rent.a.car.microservice.commonpackage.events.inventory.CarDeletedEvent;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
 import rent.a.car.microservice.inventoryservice.business.abstracts.CarService;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.CreateCarRequest;
@@ -87,7 +87,17 @@ public class CarManager implements CarService {
         sendKafkaCarDeletedEvent(id);
     }
 
-    //**********************************
+    @Override
+    public void checkIfCarAvailable(UUID id) {
+        rules.checkIfCarExists(id);
+        rules.checkCarAvailability(id);
+    }
+
+    @Override
+    public void changeStateByCarId(State state, UUID id)
+    { repository.changeStateByCarId(state, id); }
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     private void sendKafkaCarCreatedEvent(Car createdCar){
         var event = mapper.forResponse().map(createdCar, CarCreatedEvent.class);

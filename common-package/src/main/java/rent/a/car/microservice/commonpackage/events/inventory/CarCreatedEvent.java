@@ -1,4 +1,4 @@
-package rent.a.car.microservice.commonpackage.events;
+package rent.a.car.microservice.commonpackage.events.inventory;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

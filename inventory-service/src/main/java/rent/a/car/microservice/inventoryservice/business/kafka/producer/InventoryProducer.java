@@ -7,9 +7,9 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
-import rent.a.car.microservice.commonpackage.events.BrandDeletedEvent;
-import rent.a.car.microservice.commonpackage.events.CarCreatedEvent;
-import rent.a.car.microservice.commonpackage.events.CarDeletedEvent;
+import rent.a.car.microservice.commonpackage.events.inventory.BrandDeletedEvent;
+import rent.a.car.microservice.commonpackage.events.inventory.CarCreatedEvent;
+import rent.a.car.microservice.commonpackage.events.inventory.CarDeletedEvent;
 
 @Slf4j
 @Service

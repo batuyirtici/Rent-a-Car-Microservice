@@ -4,7 +4,7 @@ spring:
   data:
     mongodb:
       database: filterdb-dev
-      uri: mongodb://192.168.1.102:27017
+      uri: mongodb://localhost:27017
   kafka:
     consumer:
       auto-offset-reset: earliest

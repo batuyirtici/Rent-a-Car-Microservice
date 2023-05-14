@@ -1,4 +1,4 @@
-package rent.a.car.microservice.filterservice.configuration;
+package rent.a.car.microservice.commonpackage.configuration.mappers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

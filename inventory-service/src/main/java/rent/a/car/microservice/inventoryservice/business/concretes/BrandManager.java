@@ -2,7 +2,7 @@ package rent.a.car.microservice.inventoryservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import rent.a.car.microservice.commonpackage.events.BrandDeletedEvent;
+import rent.a.car.microservice.commonpackage.events.inventory.BrandDeletedEvent;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
 import rent.a.car.microservice.inventoryservice.business.abstracts.BrandService;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.CreateBrandRequest;
@@ -52,7 +52,9 @@ public class BrandManager implements BrandService {
     @Override
     public CreateBrandResponse add(CreateBrandRequest request) {
         var brand = mapper.forRequest().map(request, Brand.class);
+
         repository.save(brand);
+
         var response = mapper.forResponse().map(brand, CreateBrandResponse.class);
 
         return response;
@@ -78,6 +80,8 @@ public class BrandManager implements BrandService {
 
         sendKafkaBrandDeletedEvent(id);
     }
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     private void sendKafkaBrandDeletedEvent(UUID id)
     { producer.sendMessage(new BrandDeletedEvent(id)); }

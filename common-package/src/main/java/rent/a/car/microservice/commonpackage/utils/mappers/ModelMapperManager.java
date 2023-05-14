@@ -3,11 +3,7 @@ package rent.a.car.microservice.commonpackage.utils.mappers;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.modelmapper.spi.MatchingStrategy;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Service;
 
-@Service
 @AllArgsConstructor
 public class ModelMapperManager implements ModelMapperService{
     private ModelMapper mapper;

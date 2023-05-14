@@ -50,7 +50,7 @@ public class ModelManager implements ModelService {
     @Override
     public CreateModelResponse add(CreateModelRequest request) {
         var model = mapper.forRequest().map(request, Model.class);
-        model.setId(null);
+        model.setId(UUID.randomUUID());
         repository.save(model);
 
         var response = mapper.forResponse().map(model, CreateModelResponse.class);

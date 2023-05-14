@@ -23,6 +23,7 @@ public class FilterManager implements FilterService {
         var filters = repository.findAll();
 
         var response = filters
+                // TODO: brandId ve brandName null geliyor.
                 .stream()
                 .map(filter -> mapper.forResponse().map(filter, GetAllFiltersResponse.class))
                 .toList();
@@ -31,7 +32,7 @@ public class FilterManager implements FilterService {
     }
 
     @Override
-    public GetFilterResponse getById(UUID id) {
+    public GetFilterResponse getById(String id) {
         var filter = repository.findById(id).orElseThrow();
 
         var response = mapper.forResponse().map(filter, GetFilterResponse.class);
@@ -43,7 +44,7 @@ public class FilterManager implements FilterService {
     public void add(Filter filter) { repository.save(filter); }
 
     @Override
-    public void delete(UUID id) { repository.deleteById(id); }
+    public void delete(String id) { repository.deleteById(id); }
 
     @Override
     public void deleteByCarId(UUID carId) { repository.deleteByCarId(carId); }
@@ -53,4 +54,7 @@ public class FilterManager implements FilterService {
 
     @Override
     public void deleteAllByModelId(UUID modelId) {}
+
+    @Override
+    public Filter getByCarId(UUID carId) {return repository.findByCarId(carId); }
 }

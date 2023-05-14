@@ -6,6 +6,7 @@ import rent.a.car.microservice.inventoryservice.business.dto.responses.creates.C
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetAllCarsResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.updates.UpdateCarResponse;
+import rent.a.car.microservice.inventoryservice.entities.enums.State;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,4 +17,6 @@ public interface CarService {
     CreateCarResponse add(CreateCarRequest request);
     UpdateCarResponse update(UUID id, UpdateCarRequest request);
     void delete(UUID id);
+    void checkIfCarAvailable(UUID id);
+    void changeStateByCarId(State state, UUID id);
 }
