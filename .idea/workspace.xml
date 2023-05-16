@@ -4,60 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added kafka">
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/configuration/exceptions/RestExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/rental/RentalCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/constants/ExceptionTypes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/constants/Paths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/exceptions/BusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/results/ExceptionResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/kafka/consumer/RentalConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/consumer/RentalConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/clients/CarClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/controllers/RentalsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/abstracts/RentalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/dto/requests/CreateRentalRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/dto/requests/UpdateRentalRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/dto/responses/CreateRentalResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/dto/responses/GetAllRentalsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/dto/responses/GetRentalResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/dto/responses/UpdateRentalResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/kafka/producer/RentalProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/rules/RentalBusinessRules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/entities/Rental.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/repository/RentalRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added kafka-producer, kafka-consumer, rental-service...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/configuration/ModelMapperConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/BrandDeletedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/inventory/BrandDeletedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/CarCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/inventory/CarCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/CarDeletedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/inventory/CarDeletedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/mappers/ModelMapperManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/mappers/ModelMapperManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/FilterServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/FilterServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/api/controllers/FiltersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/api/controllers/FiltersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/abstracts/FilterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/abstracts/FilterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetAllFiltersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetAllFiltersResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetFilterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/dto/responses/GetFilterResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/kafka/consumer/InventoryConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/kafka/consumer/InventoryConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/configuration/ModelMapperConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/configuration/mappers/ModelMapperConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/repository/FilterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/repository/FilterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/InventoryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/api/controllers/CarsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/api/controllers/CarsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/abstracts/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/abstracts/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/BrandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/BrandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/producer/InventoryProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/producer/InventoryProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/rules/BrandBusinessRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/rules/BrandBusinessRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/rules/CarBusinessRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/rules/CarBusinessRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/rules/ModelBusinessRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/rules/ModelBusinessRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/configuration/ModelMapperConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/repository/CarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683826779101</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added kafka-producer, kafka-consumer, rental-service...">
+      <created>1684073273494</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684073273495</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +182,7 @@
     <MESSAGE value="created a project" />
     <MESSAGE value="filter-service, api-gateway" />
     <MESSAGE value="added kafka" />
-    <option name="LAST_COMMIT_MESSAGE" value="added kafka" />
+    <MESSAGE value="added kafka-producer, kafka-consumer, rental-service..." />
+    <option name="LAST_COMMIT_MESSAGE" value="added kafka-producer, kafka-consumer, rental-service..." />
   </component>
 </project>

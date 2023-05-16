@@ -1,10 +1,10 @@
 spring:
   application:
-    name: inventory-service
+    name: rental-service
   datasource:
     username: postgres
     password: '12345'
-    url: jdbc:postgresql://localhost:5432/inventorydb-dev
+    url: jdbc:postgresql://localhost:5432/rentaldb-dev
   jpa:
     properties:
       hibernate:
@@ -16,17 +16,6 @@ spring:
       bootstrap-servers: http://localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    consumer:
-      auto-offset-reset: earliest
-      bootstrap-servers: http://localhost:9092
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: "*"
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-
 eureka:
   client:
     fetch-registry: true
