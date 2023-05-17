@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import rent.a.car.microservice.commonpackage.utils.dto.ClientResponse;
 import rent.a.car.microservice.inventoryservice.business.abstracts.CarService;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.CreateCarRequest;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.updates.UpdateCarRequest;
@@ -45,6 +46,6 @@ public class CarsController {
     { service.delete(id); }
 
     @GetMapping("/check-car-available/{id}")
-    public void checkIfCarAvailable(@PathVariable UUID id)
-    { service.checkIfCarAvailable(id); }
+    public ClientResponse checkIfCarAvailable(@PathVariable UUID id)
+    { return service.checkIfCarAvailable(id); }
 }

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import rent.a.car.microservice.commonpackage.events.Event;
 
 import java.util.UUID;
 
@@ -11,4 +12,4 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BrandDeletedEvent { private UUID brandId; }
+public class BrandDeletedEvent implements Event { private UUID brandId; }

@@ -6,11 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import rent.a.car.microservice.commonpackage.utils.constants.Paths;
 
-import java.nio.file.Path;
 
 @EnableFeignClients
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {Paths.ConfigurationBasePackage, Paths.Inventory.ServiceBasePackage})
+@SpringBootApplication(scanBasePackages = {Paths.ConfigurationBasePackage, Paths.Rental.ServiceBasePackage})
 public class RentalServiceApplication {
 
 	public static void main(String[] args) {

@@ -3,6 +3,7 @@ package rent.a.car.microservice.inventoryservice.business.concretes;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import rent.a.car.microservice.commonpackage.events.inventory.BrandDeletedEvent;
+import rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
 import rent.a.car.microservice.inventoryservice.business.abstracts.BrandService;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.CreateBrandRequest;
@@ -11,7 +12,6 @@ import rent.a.car.microservice.inventoryservice.business.dto.responses.creates.C
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.brand.GetAllBrandsResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.brand.GetBrandResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.updates.UpdateBrandResponse;
-import rent.a.car.microservice.inventoryservice.business.kafka.producer.InventoryProducer;
 import rent.a.car.microservice.inventoryservice.business.rules.BrandBusinessRules;
 import rent.a.car.microservice.inventoryservice.entities.Brand;
 import rent.a.car.microservice.inventoryservice.repository.BrandRepository;
@@ -25,7 +25,7 @@ public class BrandManager implements BrandService {
     private final BrandRepository repository;
     private final ModelMapperService mapper;
     private final BrandBusinessRules rules;
-    private final InventoryProducer producer;
+    private final KafkaProducer producer;
 
     @Override
     public List<GetAllBrandsResponse> getAll() {
@@ -84,5 +84,5 @@ public class BrandManager implements BrandService {
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     private void sendKafkaBrandDeletedEvent(UUID id)
-    { producer.sendMessage(new BrandDeletedEvent(id)); }
+    { producer.sendMessage(new BrandDeletedEvent(id), "brand-deleted"); }
 }
