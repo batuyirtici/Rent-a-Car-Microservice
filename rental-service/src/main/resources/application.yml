@@ -33,9 +33,11 @@ eureka:
 server:
   port: 0
 
-resilience4j:
-  retry:
-    instances:
-      checkIfCarAvailable:
-        maxRetryAttempts: 5
-        waitDuration: 5s
+
+#Fault Tolerance Limiter Different Solution
+#resilience4j:
+#  retry:
+#    instances:
+#      checkIfCarAvailable:
+#        maxRetryAttempts: 5
+#        waitDuration: 5s

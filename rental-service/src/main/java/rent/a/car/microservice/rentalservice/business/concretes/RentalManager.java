@@ -56,6 +56,7 @@ public class RentalManager implements RentalService {
     @Override
     public CreateRentalResponse add(CreateRentalRequest request) {
         rules.ensureCarIsAvailable(request.getCarId());
+
         var rental = mapper.forRequest().map(request, Rental.class);
 
         rental.setId(null);
@@ -92,6 +93,9 @@ public class RentalManager implements RentalService {
         repository.deleteById(id);
 
     }
+
+//  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
     private void sendKafkaRentalCreatedMessage(UUID carId)
     { producer.sendMessage(new RentalCreatedEvent(carId),"rental-created"); }
 
