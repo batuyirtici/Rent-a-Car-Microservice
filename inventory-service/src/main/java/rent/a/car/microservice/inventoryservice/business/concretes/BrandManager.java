@@ -81,7 +81,7 @@ public class BrandManager implements BrandService {
         sendKafkaBrandDeletedEvent(id);
     }
 
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+//  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     private void sendKafkaBrandDeletedEvent(UUID id)
     { producer.sendMessage(new BrandDeletedEvent(id), "brand-deleted"); }

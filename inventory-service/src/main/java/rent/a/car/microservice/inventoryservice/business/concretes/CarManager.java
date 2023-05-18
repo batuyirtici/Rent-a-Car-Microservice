@@ -100,7 +100,7 @@ public class CarManager implements CarService {
     public void changeStateByCarId(State state, UUID id)
     { repository.changeStateByCarId(state, id); }
 
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+//  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     private void sendKafkaCarCreatedEvent(Car createdCar){
         var event = mapper.forResponse().map(createdCar, CarCreatedEvent.class);
