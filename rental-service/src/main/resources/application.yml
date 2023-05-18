@@ -33,6 +33,7 @@ eureka:
 server:
   port: 0
 
+
 resilience4j:
   retry:
     instances:
