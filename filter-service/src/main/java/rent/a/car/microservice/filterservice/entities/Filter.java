@@ -18,9 +18,9 @@ public class Filter {
     @Id
     private String id;
 
-    private UUID brandId;
     private UUID carId;
     private UUID modelId;
+    private UUID brandId; // TODO: Filterdaan null çekiyor. Consume kısmına debug ile bak.
     private String brandName;
     private String modelName;
     private String plate;

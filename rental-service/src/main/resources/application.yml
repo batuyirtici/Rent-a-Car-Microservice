@@ -39,5 +39,5 @@ server:
 #  retry:
 #    instances:
 #      checkIfCarAvailable:
-#        maxRetryAttempts: 5
-#        waitDuration: 5s
+#        maxAttempts: 5
+#        waitDuration: 15s

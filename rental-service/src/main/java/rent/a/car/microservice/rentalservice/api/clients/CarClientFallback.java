@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 import rent.a.car.microservice.commonpackage.utils.dto.ClientResponse;
 
 import java.util.UUID;
@@ -20,7 +21,10 @@ public class CarClientFallback implements CarClient {
     @Retryable(maxAttempts = 5, backoff = @Backoff(value = 15000))
     @Override
     public ClientResponse checkIfCarAvailable(UUID carId) {
-        log.info("INVENTORY SERVICE IS DOWN!");
+        timeDifference = System.currentTimeMillis() - lastCallTime;
+        log.info(++i + ". INVENTORY SERVICE IS DOWN! : " + timeDifference);
+        RestTemplate rt = new RestTemplate();
+        lastCallTime = System.currentTimeMillis();
         throw new RuntimeException("INVENTORY-SERVICE NOT AVAILABLE RIGHT NOW!");
     }
 }
