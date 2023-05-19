@@ -104,6 +104,8 @@ public class CarManager implements CarService {
 
     private void sendKafkaCarCreatedEvent(Car createdCar){
         var event = mapper.forResponse().map(createdCar, CarCreatedEvent.class);
+        event.setBrandId(createdCar.getModel().getBrand().getId());
+        event.setBrandName(createdCar.getModel().getBrand().getName());
         producer.sendMessage(event, "car-created");
     }
 

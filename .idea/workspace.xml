@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added comment line">
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added fault tolerance limiter homework">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/clients/CarClientFallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/clients/CarClientFallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RentalServiceApplication" />
+        <item itemvalue="Application.InventoryServiceApplication" />
+        <item itemvalue="Application.FilterServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
-        <item itemvalue="Application.FilterServiceApplication" />
-        <item itemvalue="Application.InventoryServiceApplication" />
+        <item itemvalue="Application.RentalServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684445091872</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added fault tolerance limiter homework">
+      <created>1684500524439</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684500524439</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -249,22 +255,13 @@
     <MESSAGE value="added kafka-producer, kafka-consumer, rental-service..." />
     <MESSAGE value="updated inventory and rental application.yml" />
     <MESSAGE value="updated rental-service application.yml..." />
-    <MESSAGE value="added fault tolerance limiter homework" />
     <MESSAGE value="added comment line" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comment line" />
+    <MESSAGE value="added fault tolerance limiter homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="added fault tolerance limiter homework" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/kafka/producer/KafkaProducer.java</url>
-          <line>17</line>
-          <properties class="rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer" method="sendMessage">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java</url>
           <line>21</line>
@@ -283,7 +280,32 @@
           </properties>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/kafka/consumer/InventoryConsumer.java</url>
+          <line>24</line>
+          <properties class="rent.a.car.microservice.filterservice.business.kafka.consumer.InventoryConsumer" method="consume">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java</url>
+          <line>104</line>
+          <properties class="rent.a.car.microservice.inventoryservice.business.concretes.CarManager" method="sendKafkaCarCreatedEvent">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="createdCar" />
+        <watch expression="createdCar" />
+        <watch expression="event" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

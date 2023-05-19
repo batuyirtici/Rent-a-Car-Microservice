@@ -20,7 +20,7 @@ public class Filter {
 
     private UUID carId;
     private UUID modelId;
-    private UUID brandId; // TODO: Filterdaan null çekiyor. Consume kısmına debug ile bak.
+    private UUID brandId;
     private String brandName;
     private String modelName;
     private String plate;
