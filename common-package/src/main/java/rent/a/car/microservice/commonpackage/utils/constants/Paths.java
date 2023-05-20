@@ -12,4 +12,7 @@ public class Paths {
 
     public static class Rental
     { public static final String ServiceBasePackage = "rent.a.car.microservice.rentalservice"; }
+
+    public static class Maintenance
+    { public static final String ServiceBasePackage = "rent.a.car.microservice.maintenanceservice"; }
 }

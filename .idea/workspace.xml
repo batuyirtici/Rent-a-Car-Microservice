@@ -4,10 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added fault tolerance limiter homework">
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="&quot;brandId and brandName is null&quot; error fixed">
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/maintenance/MaintenanceCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/maintenance/MaintenanceDeletedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/maintenance/MaintenanceReturnedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/consumer/MaintenanceConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/api/clients/CarClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/api/clients/CarClientFallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/api/controllers/MaintenancesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/abstracts/MaintenanceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/concretes/MaintenanceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/dto/requests/CreateMaintenanceRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/dto/requests/UpdateMaintenanceRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/dto/responses/CreateMaintenanceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/dto/responses/GetAllMaintenancesResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/dto/responses/GetMaintenanceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/dto/responses/UpdateMaintenanceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/business/rules/MaintenanceBusinessRules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/entities/Maintenance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maintenance-service/src/main/java/rent/a/car/microservice/maintenanceservice/repository/MaintenanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/entities/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/constants/Paths.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/utils/constants/Paths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/consumer/RentalConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/kafka/consumer/RentalConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +70,11 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/batuy/Desktop/turkcell2-microservice-master&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/batuy/Desktop/turkcell-java-bootcamp/rent-a-car-microservice/maintenance-service&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -68,7 +89,7 @@
       <recent name="C:\Users\batuy\Desktop\turkcell-java-bootcamp\rent-a-car-microservice" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RentalServiceApplication">
+  <component name="RunManager" selected="Application.MaintenanceServiceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rent.a.car.microservice.apigateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -121,12 +142,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentalServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="rent.a.car.microservice.rentalservice.RentalServiceApplication" />
-      <module name="rental-service" />
+    <configuration name="MaintenanceServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rent.a.car.microservice.maintenanceservice.MaintenanceServiceApplication" />
+      <module name="maintenance-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="rent.a.car.microservice.rentalservice.*" />
+          <option name="PATTERN" value="rent.a.car.microservice.maintenanceservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MaintenanceServiceApplication" />
         <item itemvalue="Application.InventoryServiceApplication" />
-        <item itemvalue="Application.FilterServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
-        <item itemvalue="Application.RentalServiceApplication" />
+        <item itemvalue="Application.FilterServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684500524439</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="&quot;brandId and brandName is null&quot; error fixed">
+      <created>1684513646275</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684513646275</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -257,49 +285,10 @@
     <MESSAGE value="updated rental-service application.yml..." />
     <MESSAGE value="added comment line" />
     <MESSAGE value="added fault tolerance limiter homework" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fault tolerance limiter homework" />
+    <MESSAGE value="&quot;brandId and brandName is null&quot; error fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;brandId and brandName is null&quot; error fixed" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java</url>
-          <line>21</line>
-          <properties class="rent.a.car.microservice.filterservice.business.concretes.FilterManager" method="getAll">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/concretes/FilterManager.java</url>
-          <line>34</line>
-          <properties class="rent.a.car.microservice.filterservice.business.concretes.FilterManager" method="getById">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/filter-service/src/main/java/rent/a/car/microservice/filterservice/business/kafka/consumer/InventoryConsumer.java</url>
-          <line>24</line>
-          <properties class="rent.a.car.microservice.filterservice.business.kafka.consumer.InventoryConsumer" method="consume">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java</url>
-          <line>104</line>
-          <properties class="rent.a.car.microservice.inventoryservice.business.concretes.CarManager" method="sendKafkaCarCreatedEvent">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="createdCar" />
