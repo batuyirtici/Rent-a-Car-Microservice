@@ -3,6 +3,7 @@ package rent.a.car.microservice.rentalservice.business.concretes;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import rent.a.car.microservice.commonpackage.events.rental.RentalCreatedEvent;
+import rent.a.car.microservice.commonpackage.events.rental.RentalDeletedEvent;
 import rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
 import rent.a.car.microservice.rentalservice.api.clients.CarClient;
@@ -89,7 +90,7 @@ public class RentalManager implements RentalService {
     @Override
     public void delete(UUID id) {
         rules.checkIfRentalExists(id);
-
+        sendKafkaRentalDeletedEvent(id);
         repository.deleteById(id);
 
     }
@@ -98,6 +99,11 @@ public class RentalManager implements RentalService {
 
     private void sendKafkaRentalCreatedMessage(UUID carId)
     { producer.sendMessage(new RentalCreatedEvent(carId),"rental-created"); }
+
+    private void sendKafkaRentalDeletedEvent(UUID id) {
+        var carId = repository.findById(id).orElseThrow().getCarId();
+        producer.sendMessage(new RentalDeletedEvent(carId), "rental-deleted");
+    }
 
     private double getTotalPrice(Rental rental)
     { return rental.getDailyPrice()*rental.getRentedForDays(); }

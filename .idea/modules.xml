@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/discovery-server/discovery-server.iml" filepath="$PROJECT_DIR$/discovery-server/discovery-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/filter-service/filter-service.iml" filepath="$PROJECT_DIR$/filter-service/filter-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/inventory-service/inventory-service.iml" filepath="$PROJECT_DIR$/inventory-service/inventory-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maintenance-service/maintenance-service.iml" filepath="$PROJECT_DIR$/maintenance-service/maintenance-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/rent-a-car-microservice.iml" filepath="$PROJECT_DIR$/rent-a-car-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/rental-service/rental-service.iml" filepath="$PROJECT_DIR$/rental-service/rental-service.iml" />
     </modules>
