@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="update payment-service">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/rent/a/car/microservice/paymentservice/adapters/FakePosServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/rent/a/car/microservice/paymentservice/adapters/FakePosServiceAdapter.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="updated fake pos service adapter" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -257,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684760891100</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="updated fake pos service adapter">
+      <created>1684779983506</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684779983506</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -272,7 +276,8 @@
     <MESSAGE value="added fault tolerance limiter homework" />
     <MESSAGE value="added maintenance-service transactions" />
     <MESSAGE value="update payment-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="update payment-service" />
+    <MESSAGE value="updated fake pos service adapter" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated fake pos service adapter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
