@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import rent.a.car.microservice.commonpackage.dto.CreateRentalPaymentRequest;
+import rent.a.car.microservice.commonpackage.dto.PaymentRequest;
 
 import java.util.UUID;
 
@@ -22,4 +24,6 @@ public class CreateRentalRequest {
 
     @Min(1)
     private int rentedForDays;
+
+    private PaymentRequest paymentRequest;
 }

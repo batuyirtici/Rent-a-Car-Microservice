@@ -1,6 +1,5 @@
-package rent.a.car.microservice.rentalservice.api.clients;
+package rent.a.car.microservice.rentalservice.api.clients.car;
 
-import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;

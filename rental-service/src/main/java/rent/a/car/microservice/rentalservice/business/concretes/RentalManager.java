@@ -2,11 +2,11 @@ package rent.a.car.microservice.rentalservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rent.a.car.microservice.commonpackage.dto.CreateRentalPaymentRequest;
 import rent.a.car.microservice.commonpackage.events.rental.RentalCreatedEvent;
 import rent.a.car.microservice.commonpackage.events.rental.RentalDeletedEvent;
 import rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
-import rent.a.car.microservice.rentalservice.api.clients.CarClient;
 import rent.a.car.microservice.rentalservice.business.abstracts.RentalService;
 import rent.a.car.microservice.rentalservice.business.dto.requests.CreateRentalRequest;
 import rent.a.car.microservice.rentalservice.business.dto.requests.UpdateRentalRequest;
@@ -25,7 +25,6 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class RentalManager implements RentalService {
-
     private final RentalRepository repository;
     private final ModelMapperService mapper;
     private final RentalBusinessRules rules;
@@ -63,6 +62,13 @@ public class RentalManager implements RentalService {
         rental.setId(null);
         rental.setTotalPrice(getTotalPrice(rental));
         rental.setRentedAt(LocalDate.now());
+
+        // Payment Service Step Senkron
+        CreateRentalPaymentRequest paymentRequest = new CreateRentalPaymentRequest();
+        mapper.forRequest().map(request.getPaymentRequest(), paymentRequest);
+        paymentRequest.setPrice(getTotalPrice(rental));
+        rules.ensurePaymentIsValid(paymentRequest);
+
         repository.save(rental);
         sendKafkaRentalCreatedMessage(rental.getCarId());
 
