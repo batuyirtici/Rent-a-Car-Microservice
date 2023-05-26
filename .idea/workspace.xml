@@ -4,34 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="updated commit">
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/api-gateway-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/api-gateway-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/discovery-server-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/discovery-server-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/filter-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/filter-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/inventory-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/inventory-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/maintenance-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/maintenance-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/payment-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/payment-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/rental-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server-dev-and-prod/rental-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/java/rent/a/car/microservice/configserver/ConfigServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/test/java/rent/a/car/microservice/configserver/ConfigServerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added config-server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/filter-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maintenance-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/maintenance-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,8 +278,18 @@
       <option name="project" value="LOCAL" />
       <updated>1684781944275</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added config-server">
+      <created>1685061683997</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685061683997</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="docker-compose.yml" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -313,7 +305,8 @@
     <MESSAGE value="update payment-service" />
     <MESSAGE value="updated fake pos service adapter" />
     <MESSAGE value="updated commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated commit" />
+    <MESSAGE value="added config-server" />
+    <option name="LAST_COMMIT_MESSAGE" value="added config-server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
