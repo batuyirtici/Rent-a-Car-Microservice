@@ -1,6 +1,6 @@
 spring:
   application:
-    name: discovery-server
+    name: filter-service
   cloud:
     config:
       profile: dev
