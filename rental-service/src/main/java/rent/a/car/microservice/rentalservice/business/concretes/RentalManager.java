@@ -3,10 +3,15 @@ package rent.a.car.microservice.rentalservice.business.concretes;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import rent.a.car.microservice.commonpackage.dto.CreateRentalPaymentRequest;
+import rent.a.car.microservice.commonpackage.dto.GetCarResponse;
+import rent.a.car.microservice.commonpackage.dto.PaymentCarResponse;
+import rent.a.car.microservice.commonpackage.dto.PaymentRequest;
+import rent.a.car.microservice.commonpackage.events.invoice.InvoiceCreatedEvent;
 import rent.a.car.microservice.commonpackage.events.rental.RentalCreatedEvent;
 import rent.a.car.microservice.commonpackage.events.rental.RentalDeletedEvent;
 import rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
+import rent.a.car.microservice.rentalservice.api.clients.car.CarClient;
 import rent.a.car.microservice.rentalservice.business.abstracts.RentalService;
 import rent.a.car.microservice.rentalservice.business.dto.requests.CreateRentalRequest;
 import rent.a.car.microservice.rentalservice.business.dto.requests.UpdateRentalRequest;
@@ -29,6 +34,7 @@ public class RentalManager implements RentalService {
     private final ModelMapperService mapper;
     private final RentalBusinessRules rules;
     private final KafkaProducer producer;
+    private final CarClient carClient;
 
     @Override
     public List<GetAllRentalsResponse> getAll() {
@@ -70,7 +76,14 @@ public class RentalManager implements RentalService {
         rules.ensurePaymentIsValid(paymentRequest);
 
         repository.save(rental);
+
+        // Rental Step
         sendKafkaRentalCreatedMessage(rental.getCarId());
+
+        // Invoice Step
+//        sendKafkaInvoiceCreatedMessage(rental, paymentRequest);
+        PaymentCarResponse paymentCarResponse = new PaymentCarResponse();
+        createInvoiceRequest(request, paymentCarResponse,rental);
 
         var response = mapper.forResponse().map(rental, CreateRentalResponse.class);
 
@@ -109,6 +122,35 @@ public class RentalManager implements RentalService {
     private void sendKafkaRentalDeletedEvent(UUID id) {
         var carId = repository.findById(id).orElseThrow().getCarId();
         producer.sendMessage(new RentalDeletedEvent(carId), "rental-deleted");
+    }
+
+//    private void sendKafkaInvoiceCreatedMessage(Rental rental, PaymentRequest request){
+//        PaymentCarResponse event =new PaymentCarResponse();
+//        mapper.forRequest().map(event, Rental.class);
+//        event.setCarId(rental.getCarId());
+//        event.setDailyPrice(rental.getDailyPrice());
+//        event.setRentedForDays(rental.getRentedForDays());
+//        event.setTotalPrice(rental.getTotalPrice());
+//        event.setRentedAt(rental.getRentedAt());
+//        event.setCardHolder(request.getCardHolder());
+//        producer.sendMessage(event, "invoice-created");
+//    }
+
+    private void createInvoiceRequest(CreateRentalRequest request, PaymentCarResponse paymentCarResponse, Rental rental) {
+        GetCarResponse car = carClient.checkIfCarInRental(request.getCarId());
+
+        // TODO: rentedAt, brandName and modelName is null!
+        paymentCarResponse.setCarId(request.getCarId());
+        paymentCarResponse.setRentedAt(LocalDate.now());
+        paymentCarResponse.setModelName(car.getModelName());
+        paymentCarResponse.setBrandName(car.getModelBrandName());
+        paymentCarResponse.setDailyPrice(request.getDailyPrice());
+        paymentCarResponse.setRentedForDays(request.getRentedForDays());
+        paymentCarResponse.setCardHolder(request.getPaymentRequest().getCardHolder());
+        paymentCarResponse.setPlate(car.getPlate());
+        paymentCarResponse.setModelYear(car.getModelYear());
+
+        producer.sendMessage(paymentCarResponse, "invoice-created");
     }
 
     private double getTotalPrice(Rental rental)

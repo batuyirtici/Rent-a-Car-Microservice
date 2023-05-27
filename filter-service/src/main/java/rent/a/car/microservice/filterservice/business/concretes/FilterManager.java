@@ -23,7 +23,6 @@ public class FilterManager implements FilterService {
         var filters = repository.findAll();
 
         var response = filters
-                // TODO: brandId ve brandName null geliyor.
                 .stream()
                 .map(filter -> mapper.forResponse().map(filter, GetAllFiltersResponse.class))
                 .toList();

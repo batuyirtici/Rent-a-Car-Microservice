@@ -5,6 +5,7 @@ import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import rent.a.car.microservice.commonpackage.dto.GetCarResponse;
 import rent.a.car.microservice.commonpackage.utils.dto.ClientResponse;
 
 import java.util.UUID;
@@ -25,5 +26,11 @@ public class CarClientFallback implements CarClient {
         RestTemplate rt = new RestTemplate();
         lastCallTime = System.currentTimeMillis();
         throw new RuntimeException("INVENTORY-SERVICE NOT AVAILABLE RIGHT NOW!");
+    }
+
+    @Override
+    public GetCarResponse checkIfCarInRental(UUID carId) {
+        log.info("INVENTORY SERVICE IS DOWN!");
+        throw new RuntimeException("INVENTORY_SERVICE NOT AVAILABLE RIGHT NOW!");
     }
 }

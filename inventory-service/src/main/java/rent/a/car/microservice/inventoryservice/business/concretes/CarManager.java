@@ -2,6 +2,7 @@ package rent.a.car.microservice.inventoryservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rent.a.car.microservice.commonpackage.dto.PaymentCarResponse;
 import rent.a.car.microservice.commonpackage.events.inventory.CarCreatedEvent;
 import rent.a.car.microservice.commonpackage.events.inventory.CarDeletedEvent;
 import rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer;
@@ -61,6 +62,7 @@ public class CarManager implements CarService {
 
         var createdCar = repository.save(car);
         sendKafkaCarCreatedEvent(createdCar);
+        sendKafkaInvoiceCreatedEvent(createdCar);
 
         var response = mapper.forResponse().map(createdCar, CreateCarResponse.class);
 
@@ -111,6 +113,15 @@ public class CarManager implements CarService {
 
     private void sendKafkaCarDeletedEvent(UUID id)
     { producer.sendMessage(new CarDeletedEvent(id), "car-deleted"); }
+
+    private void sendKafkaInvoiceCreatedEvent(Car car){
+        PaymentCarResponse response = new PaymentCarResponse();
+        response.setBrandName(car.getModel().getBrand().getName());
+        response.setModelName(car.getModel().getName());
+        response.setModelYear(car.getModelYear());
+        response.setPlate(car.getPlate());
+        producer.sendMessage(response,"invoice-created");
+    }
 
     private void validateCarAvailability(UUID id, ClientResponse response) {
         try {

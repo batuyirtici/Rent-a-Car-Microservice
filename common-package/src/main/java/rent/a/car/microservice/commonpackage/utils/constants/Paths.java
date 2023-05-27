@@ -18,4 +18,7 @@ public class Paths {
 
     public static class Payment
     { public static final String ServiceBasePackage = "rent.a.car.microservice.paymentservice"; }
+
+    public static class Invoice
+    { public static final String ServiceBasePackage = "rent.a.car.microservice.invoiceservice"; }
 }
