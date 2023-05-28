@@ -5,13 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import rent.a.car.microservice.commonpackage.dto.GetCarResponse;
 import rent.a.car.microservice.commonpackage.utils.dto.ClientResponse;
 import rent.a.car.microservice.inventoryservice.business.abstracts.CarService;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.CreateCarRequest;
 import rent.a.car.microservice.inventoryservice.business.dto.requests.updates.UpdateCarRequest;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.creates.CreateCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetAllCarsResponse;
-import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.updates.UpdateCarResponse;
 
 import java.util.List;

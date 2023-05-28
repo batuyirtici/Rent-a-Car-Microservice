@@ -16,5 +16,5 @@ public interface CarClient {
     ClientResponse checkIfCarAvailable(@PathVariable UUID carId);
 
     @GetMapping(value = "/api/cars/{carId}")
-    GetCarResponse checkIfCarInRental(@PathVariable UUID carId);
+    GetCarResponse getByIdForCar(@PathVariable UUID carId);
 }

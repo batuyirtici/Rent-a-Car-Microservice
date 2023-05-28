@@ -2,7 +2,6 @@ package rent.a.car.microservice.inventoryservice.business.concretes;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import rent.a.car.microservice.commonpackage.dto.PaymentCarResponse;
 import rent.a.car.microservice.commonpackage.events.inventory.CarCreatedEvent;
 import rent.a.car.microservice.commonpackage.events.inventory.CarDeletedEvent;
 import rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer;
@@ -14,12 +13,12 @@ import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.Cr
 import rent.a.car.microservice.inventoryservice.business.dto.requests.updates.UpdateCarRequest;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.creates.CreateCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetAllCarsResponse;
-import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.updates.UpdateCarResponse;
 import rent.a.car.microservice.inventoryservice.business.rules.CarBusinessRules;
 import rent.a.car.microservice.inventoryservice.entities.Car;
 import rent.a.car.microservice.inventoryservice.entities.enums.State;
 import rent.a.car.microservice.inventoryservice.repository.CarRepository;
+import rent.a.car.microservice.commonpackage.dto.GetCarResponse;
 
 import java.util.List;
 import java.util.UUID;
@@ -62,7 +61,6 @@ public class CarManager implements CarService {
 
         var createdCar = repository.save(car);
         sendKafkaCarCreatedEvent(createdCar);
-        sendKafkaInvoiceCreatedEvent(createdCar);
 
         var response = mapper.forResponse().map(createdCar, CreateCarResponse.class);
 
@@ -113,15 +111,6 @@ public class CarManager implements CarService {
 
     private void sendKafkaCarDeletedEvent(UUID id)
     { producer.sendMessage(new CarDeletedEvent(id), "car-deleted"); }
-
-    private void sendKafkaInvoiceCreatedEvent(Car car){
-        PaymentCarResponse response = new PaymentCarResponse();
-        response.setBrandName(car.getModel().getBrand().getName());
-        response.setModelName(car.getModel().getName());
-        response.setModelYear(car.getModelYear());
-        response.setPlate(car.getPlate());
-        producer.sendMessage(response,"invoice-created");
-    }
 
     private void validateCarAvailability(UUID id, ClientResponse response) {
         try {

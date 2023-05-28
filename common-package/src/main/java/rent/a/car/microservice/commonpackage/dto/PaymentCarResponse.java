@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import rent.a.car.microservice.commonpackage.events.Event;
 
-import java.rmi.server.UID;
 import java.time.LocalDate;
 import java.util.UUID;
 

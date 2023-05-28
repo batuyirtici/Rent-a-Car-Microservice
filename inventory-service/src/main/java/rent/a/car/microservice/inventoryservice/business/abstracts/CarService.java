@@ -5,7 +5,7 @@ import rent.a.car.microservice.inventoryservice.business.dto.requests.creates.Cr
 import rent.a.car.microservice.inventoryservice.business.dto.requests.updates.UpdateCarRequest;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.creates.CreateCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetAllCarsResponse;
-import rent.a.car.microservice.inventoryservice.business.dto.responses.gets.car.GetCarResponse;
+import rent.a.car.microservice.commonpackage.dto.GetCarResponse;
 import rent.a.car.microservice.inventoryservice.business.dto.responses.updates.UpdateCarResponse;
 import rent.a.car.microservice.inventoryservice.entities.enums.State;
 

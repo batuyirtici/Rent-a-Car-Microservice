@@ -29,7 +29,7 @@ public class CarClientFallback implements CarClient {
     }
 
     @Override
-    public GetCarResponse checkIfCarInRental(UUID carId) {
+    public GetCarResponse getByIdForCar(UUID carId) {
         log.info("INVENTORY SERVICE IS DOWN!");
         throw new RuntimeException("INVENTORY_SERVICE NOT AVAILABLE RIGHT NOW!");
     }

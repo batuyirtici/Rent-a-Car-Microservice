@@ -1,10 +1,8 @@
 package rent.a.car.microservice.invoiceservice.api.controllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import rent.a.car.microservice.invoiceservice.business.abstracts.InvoiceService;
 import rent.a.car.microservice.invoiceservice.business.dto.responses.GetAllInvoicesResponse;
 import rent.a.car.microservice.invoiceservice.business.dto.responses.GetInvoiceResponse;
@@ -24,4 +22,9 @@ public class InvoicesController {
     @GetMapping("/{id}")
     public GetInvoiceResponse getById(@PathVariable String id)
     { return service.getById(id); }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void delete(@PathVariable String id)
+    { service.delete(id); }
 }

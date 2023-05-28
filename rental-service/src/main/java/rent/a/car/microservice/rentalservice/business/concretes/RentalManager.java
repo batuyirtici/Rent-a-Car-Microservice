@@ -6,7 +6,6 @@ import rent.a.car.microservice.commonpackage.dto.CreateRentalPaymentRequest;
 import rent.a.car.microservice.commonpackage.dto.GetCarResponse;
 import rent.a.car.microservice.commonpackage.dto.PaymentCarResponse;
 import rent.a.car.microservice.commonpackage.dto.PaymentRequest;
-import rent.a.car.microservice.commonpackage.events.invoice.InvoiceCreatedEvent;
 import rent.a.car.microservice.commonpackage.events.rental.RentalCreatedEvent;
 import rent.a.car.microservice.commonpackage.events.rental.RentalDeletedEvent;
 import rent.a.car.microservice.commonpackage.kafka.producer.KafkaProducer;
@@ -69,7 +68,7 @@ public class RentalManager implements RentalService {
         rental.setTotalPrice(getTotalPrice(rental));
         rental.setRentedAt(LocalDate.now());
 
-        // Payment Service Step Senkron
+        // Payment Service Step Sencron
         CreateRentalPaymentRequest paymentRequest = new CreateRentalPaymentRequest();
         mapper.forRequest().map(request.getPaymentRequest(), paymentRequest);
         paymentRequest.setPrice(getTotalPrice(rental));
@@ -81,9 +80,8 @@ public class RentalManager implements RentalService {
         sendKafkaRentalCreatedMessage(rental.getCarId());
 
         // Invoice Step
-//        sendKafkaInvoiceCreatedMessage(rental, paymentRequest);
-        PaymentCarResponse paymentCarResponse = new PaymentCarResponse();
-        createInvoiceRequest(request, paymentCarResponse,rental);
+        GetCarResponse carResponse = carClient.getByIdForCar(request.getCarId());
+        sendKafkaInvoiceCreatedMessage(rental, paymentRequest, carResponse);
 
         var response = mapper.forResponse().map(rental, CreateRentalResponse.class);
 
@@ -124,33 +122,21 @@ public class RentalManager implements RentalService {
         producer.sendMessage(new RentalDeletedEvent(carId), "rental-deleted");
     }
 
-//    private void sendKafkaInvoiceCreatedMessage(Rental rental, PaymentRequest request){
-//        PaymentCarResponse event =new PaymentCarResponse();
-//        mapper.forRequest().map(event, Rental.class);
-//        event.setCarId(rental.getCarId());
-//        event.setDailyPrice(rental.getDailyPrice());
-//        event.setRentedForDays(rental.getRentedForDays());
-//        event.setTotalPrice(rental.getTotalPrice());
-//        event.setRentedAt(rental.getRentedAt());
-//        event.setCardHolder(request.getCardHolder());
-//        producer.sendMessage(event, "invoice-created");
-//    }
+    private void sendKafkaInvoiceCreatedMessage(Rental rental, PaymentRequest paymentRequest, GetCarResponse carResponse){
+        PaymentCarResponse event =new PaymentCarResponse();
 
-    private void createInvoiceRequest(CreateRentalRequest request, PaymentCarResponse paymentCarResponse, Rental rental) {
-        GetCarResponse car = carClient.checkIfCarInRental(request.getCarId());
+        event.setCarId(carResponse.getId());
+        event.setBrandName(carResponse.getModelBrandName());
+        event.setModelName(carResponse.getModelName());
+        event.setModelYear(carResponse.getModelYear());
+        event.setPlate(carResponse.getPlate());
+        event.setCardHolder(paymentRequest.getCardHolder());
+        event.setDailyPrice(rental.getDailyPrice());
+        event.setRentedForDays(rental.getRentedForDays());
+        event.setTotalPrice(rental.getTotalPrice());
+        event.setRentedAt(LocalDate.now());
 
-        // TODO: rentedAt, brandName and modelName is null!
-        paymentCarResponse.setCarId(request.getCarId());
-        paymentCarResponse.setRentedAt(LocalDate.now());
-        paymentCarResponse.setModelName(car.getModelName());
-        paymentCarResponse.setBrandName(car.getModelBrandName());
-        paymentCarResponse.setDailyPrice(request.getDailyPrice());
-        paymentCarResponse.setRentedForDays(request.getRentedForDays());
-        paymentCarResponse.setCardHolder(request.getPaymentRequest().getCardHolder());
-        paymentCarResponse.setPlate(car.getPlate());
-        paymentCarResponse.setModelYear(car.getModelYear());
-
-        producer.sendMessage(paymentCarResponse, "invoice-created");
+        producer.sendMessage(event, "invoice-created");
     }
 
     private double getTotalPrice(Rental rental)

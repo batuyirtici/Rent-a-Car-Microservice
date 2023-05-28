@@ -7,7 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -28,5 +28,5 @@ public class Invoice {
     private double dailyPrice;
     private int rentedForDays;
     private double totalPrice;
-    private LocalDateTime rentedAt;
+    private LocalDate rentedAt;
 }
