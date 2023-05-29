@@ -34,6 +34,7 @@ public class InvoiceManager implements InvoiceService {
         Invoice invoice = repository.findById(id).orElseThrow();
 
         GetInvoiceResponse response = mapper.forResponse().map(invoice, GetInvoiceResponse.class);
+        response.setRentedAt(invoice.getRentedAt());
 
         return response;
     }

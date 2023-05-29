@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -23,5 +23,5 @@ public class GetAllInvoicesResponse {
     private double dailyPrice;
     private int rentedForDays;
     private double totalPrice;
-    private LocalDateTime rentedAt;
+    private LocalDate rentedAt;
 }

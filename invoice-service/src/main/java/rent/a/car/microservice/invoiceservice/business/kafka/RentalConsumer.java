@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import rent.a.car.microservice.commonpackage.dto.PaymentCarResponse;
-import rent.a.car.microservice.commonpackage.events.invoice.InvoiceCreatedEvent;
 import rent.a.car.microservice.commonpackage.utils.mappers.ModelMapperService;
 import rent.a.car.microservice.invoiceservice.business.abstracts.InvoiceService;
 import rent.a.car.microservice.invoiceservice.entities.Invoice;

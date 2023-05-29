@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="added invoice service">
+    <list default="true" id="b1d895b3-698e-4367-9b11-89e255f3b3a8" name="Changes" comment="updated invoice service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/dto/PaymentCarResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/dto/PaymentCarResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/rent/a/car/microservice/commonpackage/events/invoice/InvoiceCreatedEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/api/controllers/CarsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/api/controllers/CarsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/abstracts/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/abstracts/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/rent/a/car/microservice/inventoryservice/business/concretes/CarManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/api/controllers/InvoicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/api/controllers/InvoicesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/kafka/InventoryConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/concretes/InvoiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/concretes/InvoiceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/dto/responses/GetAllInvoicesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/dto/responses/GetAllInvoicesResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/dto/responses/GetInvoiceResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/dto/responses/GetInvoiceResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/kafka/RentalConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/kafka/RentalConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/entities/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/entities/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/clients/car/CarClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/clients/car/CarClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/clients/car/CarClientFallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/api/clients/car/CarClientFallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,18 +46,18 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/batuy/Desktop/turkcell-java-bootcamp/rent-a-car-microservice/invoice-service&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/batuy/Desktop/turkcell-java-bootcamp/rent-a-car-microservice",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="rent.a.car.microservice.commonpackage.utils.annotations" />
@@ -81,13 +73,13 @@
       <recent name="rent.a.car.microservice.commonpackage.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PaymentServiceApplication">
-    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="rent.a.car.microservice.apigateway.ApiGatewayApplication" />
-      <module name="api-gateway" />
+  <component name="RunManager" selected="Application.RentalServiceApplication">
+    <configuration name="DiscoveryServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rent.a.car.microservice.discoveryserver.DiscoveryServerApplication" />
+      <module name="discovery-server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="rent.a.car.microservice.apigateway.*" />
+          <option name="PATTERN" value="rent.a.car.microservice.discoveryserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,10 +142,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.InvoiceServiceApplication" />
-        <item itemvalue="Application.PaymentServiceApplication" />
-        <item itemvalue="Application.InventoryServiceApplication" />
         <item itemvalue="Application.RentalServiceApplication" />
-        <item itemvalue="Application.ApiGatewayApplication" />
+        <item itemvalue="Application.InventoryServiceApplication" />
+        <item itemvalue="Application.PaymentServiceApplication" />
+        <item itemvalue="Application.DiscoveryServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685201323541</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="updated invoice service">
+      <created>1685233730657</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1685233730657</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -390,19 +389,52 @@
     <MESSAGE value="added config-server-dev-and-prod" />
     <MESSAGE value="updated commit" />
     <MESSAGE value="added invoice service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added invoice service" />
+    <MESSAGE value="updated invoice service" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated invoice service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/kafka/RentalConsumer.java</url>
-          <line>27</line>
+          <line>26</line>
           <properties class="rent.a.car.microservice.invoiceservice.business.kafka.RentalConsumer" method="consume">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java</url>
+          <line>61</line>
+          <properties class="rent.a.car.microservice.rentalservice.business.concretes.RentalManager" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java</url>
+          <line>124</line>
+          <properties class="rent.a.car.microservice.rentalservice.business.concretes.RentalManager" method="sendKafkaInvoiceCreatedMessage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/invoice-service/src/main/java/rent/a/car/microservice/invoiceservice/business/concretes/InvoiceManager.java</url>
+          <line>32</line>
+          <properties class="rent.a.car.microservice.invoiceservice.business.concretes.InvoiceManager" method="getById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rental-service/src/main/java/rent/a/car/microservice/rentalservice/business/concretes/RentalManager.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
