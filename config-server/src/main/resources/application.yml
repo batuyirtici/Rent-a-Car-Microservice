@@ -4,8 +4,8 @@ spring:
   cloud:
     config:
       server:
-        default-label: main
+        default-label: master
         git:
-          uri: https://github.com/batuyirtici/Config-Server
+          uri: https://github.com/batuyirtici/Rent-A-Car-Microservice-Config-Server
 server:
   port: 8888

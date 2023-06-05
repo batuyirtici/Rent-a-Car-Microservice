@@ -9,6 +9,18 @@ services:
     volumes:
       - kafka_data:/opt/kafka/kafka-logs
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloakdb-dev
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    command: start-dev
+    volumes:
+      - .:/opt/jboss/keycloak/imports
+
   mongodb:
     container_name: filterdb-dev
     image: mongo
