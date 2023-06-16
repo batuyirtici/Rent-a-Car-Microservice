@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/common-package/common-package.iml" filepath="$PROJECT_DIR$/common-package/common-package.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/discovery-server/discovery-server.iml" filepath="$PROJECT_DIR$/discovery-server/discovery-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/filter-service/filter-service.iml" filepath="$PROJECT_DIR$/filter-service/filter-service.iml" />
@@ -11,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/invoice-service/invoice-service.iml" filepath="$PROJECT_DIR$/invoice-service/invoice-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/maintenance-service/maintenance-service.iml" filepath="$PROJECT_DIR$/maintenance-service/maintenance-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment-service/payment-service.iml" filepath="$PROJECT_DIR$/payment-service/payment-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rent-a-car-common-package/rent-a-car-common-package.iml" filepath="$PROJECT_DIR$/../rent-a-car-common-package/rent-a-car-common-package.iml" />
       <module fileurl="file://$PROJECT_DIR$/rent-a-car-microservice.iml" filepath="$PROJECT_DIR$/rent-a-car-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/rental-service/rental-service.iml" filepath="$PROJECT_DIR$/rental-service/rental-service.iml" />
     </modules>

@@ -4,6 +4,9 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import rent.a.car.microservice.commonpackage.dto.GetCarResponse;
 import rent.a.car.microservice.commonpackage.utils.dto.ClientResponse;
@@ -24,10 +27,12 @@ public class CarsController {
     private final CarService service;
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('user', 'admin')") //sPeL
     public List<GetAllCarsResponse> getAll()
     { return service.getAll(); }
 
     @GetMapping("/{id}")
+    @PostAuthorize("hasRole('admin') || returnObject.modelYear == 2019")
     public GetCarResponse getById(@PathVariable UUID id)
     { return service.getById(id); }
 
